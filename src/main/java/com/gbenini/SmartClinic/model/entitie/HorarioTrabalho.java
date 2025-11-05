@@ -16,7 +16,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class HorarioTrabalho {
 
-    private Long id;
+    private Long horarioTrabalhoId;
 
     private diaSemanaEnum diaSemana;
 
