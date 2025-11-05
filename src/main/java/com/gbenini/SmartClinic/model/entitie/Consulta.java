@@ -29,11 +29,11 @@ public class Consulta {
     private String observacoes;
 
     @ManyToOne
-    @JoinColumn(name = "medico_id", referencedColumnName = "medicoId")
+    @JoinColumn(name = "medico_id")
     private Medico medico;
 
     @ManyToOne
-    @JoinColumn(name = "paciente_id", referencedColumnName = "pacienteId")
+    @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
 }

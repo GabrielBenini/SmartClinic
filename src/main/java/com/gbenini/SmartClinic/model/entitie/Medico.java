@@ -24,7 +24,8 @@ public class Medico {
 
     private String especialidade;
 
-    @OneToOne(mappedBy = "medico")
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL, orphanRemoval = true)

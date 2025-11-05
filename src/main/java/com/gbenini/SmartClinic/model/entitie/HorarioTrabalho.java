@@ -26,7 +26,7 @@ public class HorarioTrabalho {
     private LocalTime horaFim;
 
     @ManyToOne
-    @JoinColumn(name = "medico_id", referencedColumnName = "medicoId")
+    @JoinColumn(name = "medico_id")
     private Medico medico;
 
 }
