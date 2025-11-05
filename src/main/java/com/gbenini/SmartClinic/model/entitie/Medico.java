@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "tb_medicos")
 @Data
@@ -20,5 +23,14 @@ public class Medico {
     private String crm;
 
     private String especialidade;
+
+    @OneToOne(mappedBy = "medico")
+    private User user;
+
+    @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<HorarioTrabalho> horarioTrabalho = new ArrayList<>();
+
+    @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Consulta> consultas;
 
 }

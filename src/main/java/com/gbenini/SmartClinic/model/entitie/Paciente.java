@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_pacientes")
@@ -24,5 +25,11 @@ public class Paciente {
     private LocalDate dataNascimento;
 
     private String telefone;
+
+    @OneToOne(mappedBy = "paciente")
+    private User user;
+
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Consulta> consultas;
 
 }
